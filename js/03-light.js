@@ -9,10 +9,10 @@ let button = document.createElement('button');
 let text = 'Click!';
 
 ul.setAttribute('style', 'width:10vw; margin:0 auto;');
-liRed.setAttribute('style', 'margin-top:1vw; width:10vw; height:10vw; border-radius: 100%; background-color:white;');
+liRed.setAttribute('style', 'margin-top:1vw; width:10vw; height:10vw; border-radius: 100%; background-color:red;');
 liYellow.setAttribute('style', 'margin-top:1vw; width:10vw; height:10vw; border-radius: 100%; background-color:white;');
 liGreen.setAttribute('style', 'margin-top:1vw; width:10vw; height:10vw; border-radius: 100%; background-color:white;');
-button.setAttribute('style', 'position:absolute; bottom:0; left:50%; width:100px; height:50px;');
+button.setAttribute('style', 'position:absolute; bottom:0; left:49%; width:100px; height:50px;');
 button.innerText = text;
 
 
@@ -22,9 +22,24 @@ ul.appendChild(liYellow);
 ul.appendChild(liGreen);
 document.body.appendChild(button);
 
-let color = ['red', 'yellow', 'green', 'white'];
-
+let counter = 0;
 button.onclick = function() {
+    counter++;
+    counter = counter % 3;
+    if (counter === 0) {
+        liRed.setAttribute('style', 'margin-top:1vw; width:10vw; height:10vw; border-radius: 100%; background-color:red;');
+        liYellow.setAttribute('style', 'margin-top:1vw; width:10vw; height:10vw; border-radius: 100%; background-color:white;');
+        liGreen.setAttribute('style', 'margin-top:1vw; width:10vw; height:10vw; border-radius: 100%; background-color:white;');
+    } else if (counter === 1) {
+        liRed.setAttribute('style', 'margin-top:1vw; width:10vw; height:10vw; border-radius: 100%; background-color:white;');
+        liYellow.setAttribute('style', 'margin-top:1vw; width:10vw; height:10vw; border-radius: 100%; background-color:yellow;');
+        liGreen.setAttribute('style', 'margin-top:1vw; width:10vw; height:10vw; border-radius: 100%; background-color:white;');
+    } else {
+        liRed.setAttribute('style', 'margin-top:1vw; width:10vw; height:10vw; border-radius: 100%; background-color:white;');
+        liYellow.setAttribute('style', 'margin-top:1vw; width:10vw; height:10vw; border-radius: 100%; background-color:white;');
+        liGreen.setAttribute('style', 'margin-top:1vw; width:10vw; height:10vw; border-radius: 100%; background-color:green;');
+    }
+    
     
     
 }
