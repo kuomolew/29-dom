@@ -25,12 +25,12 @@ document.body.appendChild(button);
 let counter = 0;
 button.onclick = function() {
     counter++;
-    counter = counter % 3;
+    counter = counter % 4;
     if (counter === 0) {
         liRed.setAttribute('style', 'margin-top:1vw; width:10vw; height:10vw; border-radius: 100%; background-color:red;');
         liYellow.setAttribute('style', 'margin-top:1vw; width:10vw; height:10vw; border-radius: 100%; background-color:white;');
         liGreen.setAttribute('style', 'margin-top:1vw; width:10vw; height:10vw; border-radius: 100%; background-color:white;');
-    } else if (counter === 1) {
+    } else if (counter === 1 || counter === 3) {
         liRed.setAttribute('style', 'margin-top:1vw; width:10vw; height:10vw; border-radius: 100%; background-color:white;');
         liYellow.setAttribute('style', 'margin-top:1vw; width:10vw; height:10vw; border-radius: 100%; background-color:yellow;');
         liGreen.setAttribute('style', 'margin-top:1vw; width:10vw; height:10vw; border-radius: 100%; background-color:white;');
